@@ -38,7 +38,7 @@ print("Blocked shots:", len(blk))
 print("shooter = athlete_id_1:", round((blk["athlete_id_1"].map(id_to_name) == blk["shooter"]).mean(), 3))
 print("shooter = athlete_id_2:", round((blk["athlete_id_2"].map(id_to_name) == blk["shooter"]).mean(), 3))
 
-cols = ["game_id", "game_date", "period", "team_id", "athlete_id_1", "athlete_id_2", "type_text",
+cols = ["game_id", "game_date", "season_type", "period", "team_id", "athlete_id_1", "athlete_id_2", "type_text",
         "text", "x", "y", "dist", "angle", "is_three", "made", "blocked", "score_value"]
 fg[[c for c in cols if c in fg.columns]].to_csv("data/fg_clean.csv", index=False)
 print("Saved data/fg_clean.csv")
